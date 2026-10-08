@@ -1,2 +1,2 @@
 # REPOSITORI RESMI TUGAS PBO SI-A ANGKATAN 2025
-Yang nyolong tugas orang lain diluar anggota kelas A, gw sumpahin internetnya gangguan 1000 tahun :V
+Ini adalah repositori resmi untuk tugas Pemrograman Berorientasi Objek (PBO) SI-A angkatan 2025. Repositori ini berisi kode sumber, dokumentasi, dan materi terkait yang digunakan dalam pelaksanaan tugas PBO.
