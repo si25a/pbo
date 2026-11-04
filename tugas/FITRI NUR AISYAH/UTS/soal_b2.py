@@ -1,0 +1,54 @@
+class Buku:
+    def __init__(self, judul, penulis):
+        self.judul = judul
+        self.penulis = penulis
+        self.__tersedia = True
+
+    def pinjam(self):
+        if self.__tersedia:
+            self.__tersedia = False
+            return True
+        return False
+
+    def kembalikan(self):
+        self.__tersedia = True
+
+    @property
+    def tersedia(self):
+        return self.__tersedia
+
+    def __str__(self):
+        status = "Tersedia" if self.__tersedia else "Dipinjam"
+        return f"{self.judul} — {self.penulis} [{status}]"
+
+
+class BukuDigital(Buku):
+    def __init__(self, judul, penulis, format_file):
+        super().__init__(judul, penulis)
+        self.format_file = format_file
+
+    def __str__(self):
+        return f"{super().__str__()} ({self.format_file})"
+
+    def unduh(self):
+        if self.tersedia:
+            return f"Mengunduh {self.judul} dalam format {self.format_file}."
+        return "Buku tidak tersedia."
+
+
+def tampilkan_info(daftar_buku):
+    for buku in daftar_buku:
+        print(buku)
+
+
+if __name__ == "__main__":
+    b1 = Buku("Laskar Pelangi", "Andrea Hirata")
+    b2 = BukuDigital("Bumi Manusia", "Pramoedya Ananta Toer", "PDF")
+    b3 = BukuDigital("Negeri 5 Menara", "Ahmad Fuadi", "EPUB")
+
+    b3.pinjam()
+
+    tampilkan_info([b1, b2, b3])
+
+    print(b2.unduh())
+    print(b3.unduh())
